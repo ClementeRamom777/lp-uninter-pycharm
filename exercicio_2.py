@@ -1,7 +1,7 @@
 #Escreva um programa que pergunta a quantidade km percorridos por um carro alugado pelo usuário, assim como a quantidade de dias pelos quais o carro foi alugado. Calcule o preço a pagar, sabendo que o carro custa R$ 60 por dia e R$ 0,15 por km rodado.
 km = int(input('Quantos km foram percorridos? '))
-dias = int(input('Quantos km foram percorridos? '))
+dias = int(input('Por quantos dias o carro foi alugado? '))
 
 preco = 60 * dias + 0.15 * km
 print(f'Km rodados: {km}. Dias: {dias}')
-print(f'Valor a ser pago: {preco: .2f}')
+print(f'Valor a ser pago: {preco:.2f}')
