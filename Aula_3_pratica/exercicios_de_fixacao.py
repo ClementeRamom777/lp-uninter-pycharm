@@ -1,7 +1,7 @@
 #Escreva as seguintes exepressões booleanas em linguagem Python
 
 #a) O somatório de 2 com 2 é menor que 4:
-if 2 + 2 < 4 :
+if (2 + 2 < 4) :
     print("Verdadeiro!")
 #b) O valor 7 // 3 é igual a 1 + 1
 if (7 // 3 == 1 + 1):
@@ -16,7 +16,7 @@ if (2 + 4 + 6 > 12):
 
 #Parte 2
 
-#a) 1387 é dividível por 19
+#a) 1387 é divisível por 19
 if (1387 % 19 == 0):
     print("Verdadeiro!")
 #b) 31 é par
