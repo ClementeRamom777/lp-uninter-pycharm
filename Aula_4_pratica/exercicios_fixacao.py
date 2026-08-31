@@ -2,7 +2,7 @@
 #a) Inteiros de 3 até 12, com 12 incluso
 #Com while
 i = 3
-while (i < 13):
+while i < 13:
     print(i)
     i += 1
 #Com for
@@ -16,6 +16,6 @@ for i in range(0,9,2):
 
 #Com while
 i = 0
-while (i <= 8):
+while i <= 8:
     print(i)
     i += 2
