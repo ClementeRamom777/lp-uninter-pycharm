@@ -11,6 +11,7 @@ while True:
            print('Tamanho válido')
        else:
            print('Tamanho inválido. Tente novamente')
+           continue
     else:
         print('Sabor inválido. Tente novamente')
         continue
