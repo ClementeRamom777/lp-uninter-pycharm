@@ -26,7 +26,6 @@ def escolha_servico():
 
 
 def num_pagina():
-
   while True:
     try:
         num_pagina = int(input('Entre com o número de páginas: '))
@@ -40,12 +39,32 @@ def num_pagina():
             return num_pagina * 0.75
         else:
             print('Não aceitamos tantas páginas de uma vez.')
-            print('Por favor, entre com um número de páginas novamente.')
+            print('Por favor, entre com o número de páginas novamente.')
     except ValueError:
         print('Valor inválido. Digite um número inteiro.')
+
+
+def servico_extra():
+    while True:
+        print('Deseja adicionar algum serviço?')
+        print('1 - Encardernação Simples - R$ 15.00')
+        print('2 - Encardernação Capa Dura - R$ 40.00')
+        print('0 - Não desejo mais nada')
+        extra = input('>>')
+        if extra == '1':
+            return 15
+        elif extra == '2':
+            return 40
+        elif extra == '0':
+            return 0
+        else:
+            print('Opção inválida, entre com o serviço adicional novamente.')
+
 
 print('Boas-vindas Ramom Siqueira Clemente')
 servico = escolha_servico()
 print(servico)
 paginas = num_pagina()
 print(paginas)
+extra = servico_extra()
+print(extra)
