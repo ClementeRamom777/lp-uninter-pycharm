@@ -73,4 +73,5 @@ paginas = num_pagina()
 extra = servico_extra()
 # Total calculado fora das funções, pela fórmula do enunciado.
 total = (servico * paginas) + extra
-print(f'Total: R$ {total:.2f} (serviço: {servico:.2f} * páginas: {paginas:.0f} + extra: {extra:.2f})')
+print(f'Total: R$ {total:.2f} (serviço: '
+      f'{servico:.2f} * páginas: {paginas:.0f} + extra: {extra:.2f})')
