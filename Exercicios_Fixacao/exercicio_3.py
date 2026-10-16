@@ -47,8 +47,8 @@ def num_pagina():
 def servico_extra():
     while True:
         print('Deseja adicionar algum serviço?')
-        print('1 - Encardernação Simples - R$ 15.00')
-        print('2 - Encardernação Capa Dura - R$ 40.00')
+        print('1 - Encadernação Simples - R$ 15.00')
+        print('2 - Encadernação Capa Dura - R$ 40.00')
         print('0 - Não desejo mais nada')
         extra = input('>>')
         if extra == '1':
@@ -63,8 +63,7 @@ def servico_extra():
 
 print('Boas-vindas Ramom Siqueira Clemente')
 servico = escolha_servico()
-print(servico)
 paginas = num_pagina()
-print(paginas)
 extra = servico_extra()
-print(extra)
+total = (servico * paginas) + extra
+print(f'Total: R$ {total:.2f} (serviço: {servico:.2f} * páginas: {paginas:.0f} + extra: {extra:.2f})')
