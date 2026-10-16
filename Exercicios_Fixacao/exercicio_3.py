@@ -67,7 +67,6 @@ def servico_extra():
             print('Opção inválida, entre com o serviço adicional novamente.')
 
 
-# Mostra o print de boas-vindas
 print('Boas-vindas Ramom Siqueira Clemente')
 servico = escolha_servico()
 paginas = num_pagina()
