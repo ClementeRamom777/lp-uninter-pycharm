@@ -29,10 +29,10 @@ def escolha_servico():
 # Pede o número de páginas e devolve a quantidade já com o desconto.
 def num_pagina():
     while True:
-# Se digitarem letras, o int() falha e o except trata o erro.
+        # Se digitarem letras, o int() falha e o except trata o erro.
         try:
             num_pagina = int(input('Entre com o número de páginas: '))
-# Faixas do enunciado: quanto mais páginas, maior o desconto.
+            # Faixas do enunciado: quanto mais páginas, maior o desconto.
             if num_pagina < 20:
                 return num_pagina
             elif num_pagina < 200:
@@ -41,7 +41,7 @@ def num_pagina():
                 return num_pagina * 0.80
             elif num_pagina < 20000:
                 return num_pagina * 0.75
-# Acima de 20000 páginas, recusa e pergunta de novo.
+            # Acima de 20000 páginas, recusa e pergunta de novo.
             else:
                 print('Não aceitamos tantas páginas de uma vez.')
                 print('Por favor, entre com o número de páginas novamente.')
