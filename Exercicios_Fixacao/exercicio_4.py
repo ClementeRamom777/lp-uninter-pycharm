@@ -17,3 +17,20 @@ def cadastrar_livro(id):
 print('Boas-vindas Ramom Siqueira Clemente')
 lista_livros = []
 id_global = 5598100
+while True:
+    print('--------------------------------------------------')
+    print('--------------- MENU PRINCIPAL -------------------')
+    print('Escolha a opção desejada:')
+    print('1 - Cadastrar Livro')
+    print('2 - Consultar Livro(s)')
+    print('3 - Remover Livro')
+    print('4 - Sair')
+    opcao = input('>>')
+    if opcao == '1':
+        cadastrar_livro(id_global)
+        id_global += 1
+    elif opcao == '4':
+        break
+    else:
+        print('Opção inválida')
+
