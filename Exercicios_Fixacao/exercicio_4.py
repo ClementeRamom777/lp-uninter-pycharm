@@ -14,6 +14,22 @@ def cadastrar_livro(id):
     lista_livros.append(livro.copy())
 
 
+def consultar_livro():
+    while True:
+        print('--------------------------------------------------')
+        print('---------- MENU CONSULTAR LIVRO -------------------')
+        print('Escolha a opção desejada:')
+        print('1 - Consultar Todos os Livros')
+        print('2 - Consultar Livro por id')
+        print('3 - Consultar Livro(s) por autor')
+        print('4 - Retornar')
+        opcao_consulta = input('>>')
+        if opcao_consulta == '4':
+            return
+        else:
+            print('Opção inválida')
+
+
 print('Boas-vindas Ramom Siqueira Clemente')
 lista_livros = []
 id_global = 5598100
@@ -29,8 +45,9 @@ while True:
     if opcao == '1':
         cadastrar_livro(id_global)
         id_global += 1
+    elif opcao == '2':
+        consultar_livro()
     elif opcao == '4':
         break
     else:
         print('Opção inválida')
-
