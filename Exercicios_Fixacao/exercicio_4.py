@@ -31,6 +31,15 @@ def consultar_livro():
                     print(f'{chave}: {valor}')
                 print()
             print('----------------')
+        elif opcao_consulta == '2':
+            id_busca = int(input('Digite o id do livro: '))
+            print('----------------')
+            for livro in lista_livros:
+                if livro['id'] == id_busca:
+                    for chave, valor in livro.items():
+                        print(f'{chave}: {valor}')
+                    print()
+            print('----------------')
         elif opcao_consulta == '4':
             return
         else:
