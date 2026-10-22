@@ -40,6 +40,15 @@ def consultar_livro():
                         print(f'{chave}: {valor}')
                     print()
             print('----------------')
+        elif opcao_consulta == '3':
+            autor_busca = input('Digite o autor do(s) livro(s): ')
+            print('----------------')
+            for livro in lista_livros:
+                if livro['autor'] == autor_busca:
+                    for chave, valor in livro.items():
+                        print(f'{chave}: {valor}')
+                    print()
+            print('----------------')
         elif opcao_consulta == '4':
             return
         else:
