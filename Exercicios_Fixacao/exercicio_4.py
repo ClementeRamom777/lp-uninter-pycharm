@@ -24,7 +24,14 @@ def consultar_livro():
         print('3 - Consultar Livro(s) por autor')
         print('4 - Retornar')
         opcao_consulta = input('>>')
-        if opcao_consulta == '4':
+        if opcao_consulta == '1':
+            print('----------------')
+            for livro in lista_livros:
+                for chave, valor in livro.items():
+                    print(f'{chave}: {valor}')
+                print()
+            print('----------------')
+        elif opcao_consulta == '4':
             return
         else:
             print('Opção inválida')
