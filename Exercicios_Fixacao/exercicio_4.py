@@ -55,6 +55,19 @@ def consultar_livro():
             print('Opção inválida')
 
 
+def remover_livro():
+    print('--------------------------------------------------')
+    print('------------- MENU REMOVER LIVRO -----------------')
+    while True:
+        id_remover = int(input('Digite o id do livro a ser removido: '))
+        for livro in lista_livros:
+            if livro['id'] == id_remover:
+                lista_livros.remove(livro)
+                print('Livro removido com sucesso!')
+                return
+        print('Id inválido')
+
+
 print('Boas-vindas Ramom Siqueira Clemente')
 lista_livros = []
 id_global = 5598100
@@ -72,6 +85,8 @@ while True:
         id_global += 1
     elif opcao == '2':
         consultar_livro()
+    elif opcao == '3':
+        remover_livro()
     elif opcao == '4':
         break
     else:
