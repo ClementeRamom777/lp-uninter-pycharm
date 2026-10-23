@@ -3,6 +3,7 @@ Exercício 4: Conteúdos até Aula 6.
 """
 
 
+# Cadastra um livro com o id recebido do menu principal (id_global).
 def cadastrar_livro(id):
     print('--------')
     print('---------- MENU CADASTRAR LIVRO ----------')
@@ -11,9 +12,11 @@ def cadastrar_livro(id):
     autor = input('Por favor entre com o autor do livro: ')
     editora = input('Por favor entre com a editora do livro: ')
     livro = {'id': id, 'nome': nome, 'autor': autor, 'editora': editora}
+    # .copy() guarda uma cópia, não um segundo nome para o dicionário.
     lista_livros.append(livro.copy())
 
 
+# Submenu de consulta; repete até o usuário escolher 4 (return).
 def consultar_livro():
     while True:
         print('--------------------------------------------------')
@@ -32,6 +35,7 @@ def consultar_livro():
                 print()
             print('----------------')
         elif opcao_consulta == '2':
+            # int(): o input devolve texto e o id foi guardado como número.
             id_busca = int(input('Digite o id do livro: '))
             print('----------------')
             for livro in lista_livros:
@@ -65,6 +69,7 @@ def remover_livro():
                 lista_livros.remove(livro)
                 print('Livro removido com sucesso!')
                 return
+        # Só chega aqui se o for terminou sem achar o id (sem return).
         print('Id inválido')
 
 
@@ -82,6 +87,7 @@ while True:
     opcao = input('>>')
     if opcao == '1':
         cadastrar_livro(id_global)
+        # Avança o id para o próximo livro não repetir o número.
         id_global += 1
     elif opcao == '2':
         consultar_livro()
