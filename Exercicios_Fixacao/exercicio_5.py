@@ -23,5 +23,16 @@ def gerar_cartela(sigla):
     cartela[2][2] = sigla
     return cartela
 
+def imprimir_cartela(cartela):
+    for i in range(5):
+        for j in range(5):
+            if i == 2 and j == 2:
+                print(f'[{cartela[i][j]}]', end=' ')
+            elif cartela[i][j] < 10:
+                print(f'[0{cartela[i][j]}]', end=' ')
+            else:
+                print(f'[{cartela[i][j]}]', end=' ')
+        print()
 
-print(gerar_cartela('RC'))
+
+imprimir_cartela(gerar_cartela('RC'))
