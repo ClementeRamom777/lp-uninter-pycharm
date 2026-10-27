@@ -35,4 +35,10 @@ def imprimir_cartela(cartela):
         print()
 
 
-imprimir_cartela(gerar_cartela('RC'))
+def sorteia_valor(sorteados):
+    if len(sorteados) >= 75:
+        return -1
+    while True:
+        numero = random.randint(1, 75)
+        if numero not in sorteados:
+            return numero
