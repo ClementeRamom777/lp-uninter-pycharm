@@ -23,6 +23,7 @@ def gerar_cartela(sigla):
     cartela[2][2] = sigla
     return cartela
 
+
 def imprimir_cartela(cartela):
     for i in range(5):
         for j in range(5):
@@ -42,3 +43,30 @@ def sorteia_valor(sorteados):
         numero = random.randint(1, 75)
         if numero not in sorteados:
             return numero
+
+
+cartelas = []
+regra = '1'
+while True:
+    print('Escolha a opção: ')
+    print('1 - Gerar Cartelas')
+    print('2 - Definir Regras')
+    print('3 - Começar Bingo!')
+    print('4 - Encerrar Programa')
+    opcao = input('>>')
+    if opcao == '1':
+        cartelas = []
+        quantidade = int(input('Informe a quantidade de cartelas a serem Geradas: '))
+        for i in range (quantidade):
+            cartelas.append(gerar_cartela('RC'))
+    elif opcao == '2':
+        print('Escolha a regra: ')
+        print('1 - Linha, Coluna, Diagonal (padrão)')
+        print('2 - Cartela Cheia')
+        regra = input('>> ')
+        if regra != '2':
+            regra = '1'
+    elif opcao == '4':
+        break
+    else:
+        print('Opção inválida')
