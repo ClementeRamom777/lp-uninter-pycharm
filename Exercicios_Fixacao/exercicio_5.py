@@ -45,6 +45,20 @@ def sorteia_valor(sorteados):
             return numero
 
 
+def verifica_ganhador_cheia(cartelas, sorteados):
+    for cartela in cartelas:
+        completa = True
+        for i in range(5):
+            for j in range(5):
+                if i == 2 and j == 2:
+                    continue
+                if cartela[i][j] not in sorteados:
+                    completa = False
+        if completa:
+            return cartela
+    return None
+
+
 cartelas = []
 regra = '1'
 while True:
@@ -66,6 +80,23 @@ while True:
         regra = input('>> ')
         if regra != '2':
             regra = '1'
+    elif opcao == '3':
+        print('Começando o Bingo!')
+        sorteados = []
+        while True:
+            valor = sorteia_valor(sorteados)
+            if valor == -1:
+                break
+            sorteados.append(valor)
+            if regra == '2':
+                ganhadora = verifica_ganhador_cheia(cartelas, sorteados)
+            else:
+                ganhadora = None
+            if ganhadora is not None:
+                print('Temos um ganhador!!')
+                print(f'Sorteados: {len(sorteados)} números')
+                imprimir_cartela(ganhadora)
+                break
     elif opcao == '4':
         break
     else:
