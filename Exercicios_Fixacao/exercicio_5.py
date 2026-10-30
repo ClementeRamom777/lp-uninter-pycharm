@@ -59,6 +59,41 @@ def verifica_ganhador_cheia(cartelas, sorteados):
     return None
 
 
+def verifica_ganhador_LCD(cartelas, sorteados):
+    for cartela in cartelas:
+        for i in range(5):
+            completa = True
+            for j in range(5):
+                if i == 2 and j == 2:
+                    continue
+                if cartela[i][j] not in sorteados:
+                    completa = False
+            if completa:
+                return cartela
+        for j in range(5):
+            completa = True
+            for i in range(5):
+                if i == 2 and j == 2:
+                    continue
+                if cartela[i][j] not in sorteados:
+                    completa = False
+            if completa:
+                return cartela
+        completa = True
+        for i in range(5):
+            if i != 2 and cartela[i][i] not in sorteados:
+                completa = False
+        if completa:
+            return cartela
+        completa = True
+        for i in range(5):
+            if i != 2 and cartela[i][4 - i] not in sorteados:
+                completa = False
+        if completa:
+            return cartela
+    return None
+
+
 cartelas = []
 regra = '1'
 while True:
@@ -91,7 +126,7 @@ while True:
             if regra == '2':
                 ganhadora = verifica_ganhador_cheia(cartelas, sorteados)
             else:
-                ganhadora = None
+                ganhadora = verifica_ganhador_LCD(cartelas, sorteados)
             if ganhadora is not None:
                 print('Temos um ganhador!!')
                 print(f'Sorteados: {len(sorteados)} números')
