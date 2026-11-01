@@ -5,6 +5,7 @@ Exercício 5: Conteúdos até a aula prática 6.
 import random
 
 
+# Gera matriz 5x5: cada coluna tem sua faixa e a sigla fica no centro.
 def gerar_cartela(sigla):
     cartela = []
     for i in range(5):
@@ -12,6 +13,7 @@ def gerar_cartela(sigla):
     for coluna in range(5):
         inicio = coluna * 15 + 1
         fim = inicio + 14
+        # Sorteia de novo se o número já saiu nesta coluna.
         usados = []
         for linha in range(5):
             while True:
@@ -20,6 +22,7 @@ def gerar_cartela(sigla):
                     usados.append(numero)
                     cartela[linha][coluna] = numero
                     break
+    # A sigla vai por último e cobre o número sorteado no centro.
     cartela[2][2] = sigla
     return cartela
 
@@ -27,6 +30,7 @@ def gerar_cartela(sigla):
 def imprimir_cartela(cartela):
     for i in range(5):
         for j in range(5):
+            # Centro primeiro: 'RC' é texto e não pode ser comparado com 10.
             if i == 2 and j == 2:
                 print(f'[{cartela[i][j]}]', end=' ')
             elif cartela[i][j] < 10:
@@ -37,6 +41,7 @@ def imprimir_cartela(cartela):
 
 
 def sorteia_valor(sorteados):
+    # Lista cheia: sem isso o while sortearia para sempre.
     if len(sorteados) >= 75:
         return -1
     while True:
@@ -50,6 +55,7 @@ def verifica_ganhador_cheia(cartelas, sorteados):
         completa = True
         for i in range(5):
             for j in range(5):
+                # O centro nunca é sorteado: pula a posição.
                 if i == 2 and j == 2:
                     continue
                 if cartela[i][j] not in sorteados:
@@ -83,6 +89,7 @@ def verifica_ganhador_LCD(cartelas, sorteados):
         for i in range(5):
             if i != 2 and cartela[i][i] not in sorteados:
                 completa = False
+        # O veredito vem depois do for, nunca dentro dele.
         if completa:
             return cartela
         completa = True
@@ -91,6 +98,7 @@ def verifica_ganhador_LCD(cartelas, sorteados):
                 completa = False
         if completa:
             return cartela
+    # Só chega aqui se nenhuma cartela completou uma sequência.
     return None
 
 
@@ -118,9 +126,11 @@ while True:
             regra = '1'
     elif opcao == '3':
         print('Começando o Bingo!')
+        # Cada bingo começa do zero (lista vazia).
         sorteados = []
         while True:
             valor = sorteia_valor(sorteados)
+            # -1: os 75 números saíram e ninguém ganhou.
             if valor == -1:
                 break
             sorteados.append(valor)
