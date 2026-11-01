@@ -105,8 +105,9 @@ while True:
     opcao = input('>>')
     if opcao == '1':
         cartelas = []
-        quantidade = int(input('Informe a quantidade de cartelas a serem Geradas: '))
-        for i in range (quantidade):
+        quantidade = int(input('Informe a quantidade de Cartelas '
+                               'a serem Geradas: '))
+        for contador in range(quantidade):
             cartelas.append(gerar_cartela('RC'))
     elif opcao == '2':
         print('Escolha a regra: ')
